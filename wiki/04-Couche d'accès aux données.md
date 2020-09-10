@@ -34,7 +34,7 @@ $sth = $dbh->prepare("SELECT * FROM `product`");
 
 ### 🏷️ **Valeurs**
 
-Afin de se prémunire de toute interprétation et donc injection SQL il est préférable de **spécifier les valeurs en dehors de la chaine de caractère SQL**.
+Afin de se prémunir de toute interprétation et donc injection SQL il est préférable de **spécifier les valeurs en dehors de la chaine de caractère SQL**.
 
 ```php
 $sth = $dbh->prepare("SELECT * FROM `product` WHERE `id`=:id");
@@ -68,7 +68,7 @@ $sth->setFetchMode(PDO::FETCH::ASSOC);
 
 ### 🏷️ **Transaction**
 
-Dans le cas de plusieurs éxécution, il est important de pouvoir annuler l'une d'entre elle si une erreur apparait. **La transaction permet de valider ou d'annuler un ensemble d'éxécutions** contenue dans un bloc.
+Dans le cas de plusieurs exécution, il est important de pouvoir annuler l'une d'entre elle si une erreur apparait. **La transaction permet de valider ou d'annuler un ensemble exécutions** contenue dans un bloc.
 
 * Open a transaction:
 

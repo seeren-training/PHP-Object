@@ -137,7 +137,7 @@ $student->message = "World"; // Fatal Error
 
 Un attribut ou une méthode private est accessible à la classe elle même.
 
-**La bonne pratique consiste à ne pas déclarer les propriétés public** pour ne pas compromettre l'intégrité des données et préserver le bon fonctionnement des méthodes. **En revanche les méthodes sont public** parce qu'elles permettent une intéraction avec l'extérieur de la classe et toute autre visibilité est une faute conceptuelle.
+**La bonne pratique consiste à ne pas déclarer les propriétés public** pour ne pas compromettre l'intégrité des données et préserver le bon fonctionnement des méthodes. **En revanche les méthodes sont public** parce qu'elles permettent une interaction avec l'extérieur de la classe et toute autre visibilité est une faute conceptuelle.
 
 ### 🏷️ **protected**
 
@@ -182,7 +182,7 @@ class Sudent
 }
 ```
 
-Le constructeur est invoqué lors de la construction de l'objet, il est inéressant pour toute `initialisation` d'attribut déclaré.
+Le constructeur est invoqué lors de la construction de l'objet, il est intéressant pour toute `initialisation` d'attribut déclaré.
 
 ```php
 $student = new Sudent();
@@ -201,7 +201,7 @@ ___
 
 ### 🏷️ **[L'héritage](https://www.php.net/manual/fr/language.oop5.inheritance.php)**
 
-Une classe peut hériter d'une autre avec le mot clef **extends**. Elle peut **accéder à l'ensemble des propriétés et méthodes qui ne sont pas private**. L'héritage permet de `factoriser` des fonctionnalités dans la classe parente et pouvoir les utiliser dans plusieurs classes enfants. Il est possible d'utiliser extends avec une suele classe parente.
+Une classe peut hériter d'une autre avec le mot clef **extends**. Elle peut **accéder à l'ensemble des propriétés et méthodes qui ne sont pas private**. L'héritage permet de `factoriser` des fonctionnalités dans la classe parente et pouvoir les utiliser dans plusieurs classes enfants. Il est possible d'utiliser extends avec une seule classe parente.
 
 * Déclaration:
 
@@ -268,7 +268,7 @@ ___
 
 
 
-**Une interface n'est pas instanciable, elle déclare des signatures de méthodes public**. En implémentant une interface, la classe devient du type de l'interface en proposant un **standard d'intéraction**.
+**Une interface n'est pas instanciable, elle déclare des signatures de méthodes public**. En implémentant une interface, la classe devient du type de l'interface en proposant un **standard d’interaction**.
 
 * Déclaration:
 
@@ -328,7 +328,7 @@ ___
 
 ## [Gestion des exceptions en PHP objet](https://www.php.net/manual/fr/class.exception.php)
 
-Il est possiblé de créer ses propres exceptions en utilisant les notions abordées.
+Il est possible de créer ses propres exceptions en utilisant les notions abordées.
 
 * Déclaration:
 

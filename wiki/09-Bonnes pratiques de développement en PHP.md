@@ -8,7 +8,7 @@ ___
 
 ## 📑 Débogage et profiling
 
-Faire du pas à pas ou générer un rapport d'éxécution permet de mettre en avant les problèmes de conception et d'algoritmie.
+Faire du pas à pas ou générer un rapport d’exécution permet de mettre en avant les problèmes de conception et d’algorithmie.
 
 ### 🏷️ [**XDebug**](https://xdebug.org/)
 
@@ -38,7 +38,7 @@ ___
 
 👨🏻‍💻 Manipulation
 
-Générer un raport de profile et l'analyser.
+Générer un rapport de profile et l'analyser.
 
 ___
 

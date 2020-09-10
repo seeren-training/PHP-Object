@@ -42,7 +42,7 @@ ___
 
 ## 📑 [Le mode "commande"](https://www.doctrine-project.org/projects/doctrine-orm/en/2.7/tutorials/getting-started.html#generating-the-database-schema)
 
-Doctrine possède un binary pour pouvoir éxécuter des commandes. Pour l'utiliser il attend de trouver le fichier suivant:
+Doctrine possède un binary pour pouvoir exécuter des commandes. Pour l'utiliser il attend de trouver le fichier suivant:
 
 ```php
 use Doctrine\ORM\Tools\Console\ConsoleRunner;
@@ -58,7 +58,7 @@ Pour vérifier notre configuration de l'entity manager et du cli, discutons avec
 vendor/bin/doctrine
 ```
 
-Maintenant l'ORM configuré et le mode commande activé, nous pouvons utiliser ses fonctionnalitées.
+Maintenant l'ORM configuré et le mode commande activé, nous pouvons utiliser ses fonctionnalités.
 
 ___
 
@@ -78,7 +78,7 @@ ___
 vendor/bin/doctrine orm:convert-mapping annotation src/Entity --from-database
 ```
 
-Bien que la commance suivante soit depréciée il est possible de générer les getters/setters. Préférez utiliser votre IDE.
+Bien que la commande suivante soit dépréciée il est possible de générer les getters/setters. Préférez utiliser votre IDE.
 
 * Générer les getters/setters:
 
@@ -108,13 +108,13 @@ ___
 
 Les annotations permettent à doctrine de renseigner des meta données sur la classe et ses attributs pour pouvoir la mapper sur la table qui la représente et ses colonnes.
 
-### 🏷️ **Création des repertoires**
+### 🏷️ **Création des répertoires**
 
 Pour la lecture, la bonne pratique est de **stocker la formulation des requêtes** dans la couche `Repository`.
 
 * Annotation:
 
-La class doit spécifier quel repository lui est rattaché.
+La classe doit spécifier quel repository lui est rattaché.
 
 ```php
 @ORM\Entity(repositoryClass="App\Repository\ProductRepository")
@@ -136,7 +136,7 @@ ___
 
 ### 🏷️ **Gestion des identifiants**
 
-Les clefs primaires sont des valeurs générées et font parties de l'identité de la table. **Aucun setter ne devrait modifier une clef primaire**. En ce qui concerne les indexs unique il y a deux syntaxes possibles.
+Les clefs primaires sont des valeurs générées et font parties de l'identité de la table. **Aucun setter ne devrait modifier une clef primaire**. En ce qui concerne les indexes unique il y a deux syntaxes possibles.
 
 * Sur la table:
 

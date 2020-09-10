@@ -1,4 +1,4 @@
-# Wiki - PHP Objet
+# Wiki - PHP Object
 
 Ce wiki contient les définitions syntaxiques de thématique du programme
 

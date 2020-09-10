@@ -3,13 +3,13 @@
 *  🔖 **Introduction**
 *  🔖 **Extension SOAP**
 *  🔖 **Choisir SOAP ou REST ?**
-*  🔖 **Ecriture d'un Web Service REST**
+*  🔖 **Écriture d'un Web Service REST**
 
 ___
 
 ## 📑 Introduction aux services Web
 
-Les languages back peuvent s'orienter sans etat pour ne fournir que de la donnée à un client. **Les formats d'intérechanges principaux sont le XML et le JSON**.
+Les langages back peuvent s'orienter sans état pour ne fournir que de la donnée à un client. **Les formats interchanges principaux sont le XML et le JSON**.
 
 ___
 
@@ -90,7 +90,7 @@ $oject = json_decode($json);
 
 ___
 
-## 📑 Ecriture d'un Web Service REST
+## 📑 Écriture d'un Web Service REST
 
 ### 🏷️ [**Serveur**](https://fr.wikipedia.org/wiki/Representational_state_transfer)
 
@@ -143,6 +143,6 @@ ___
 
 👨🏻‍💻 Manipulation
 
-Créer un controllerr REST possédant une méthode de lecture et de création et l'utiliser avec un client qui affiche et créée du contenu.
+Créer un controller REST possédant une méthode de lecture et de création et l'utiliser avec un client qui affiche et créée du contenu.
 
 ___

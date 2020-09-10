@@ -51,7 +51,7 @@ ___
 
 👨🏻‍💻 Manipulation
 
-Se prémunire de la faille **XSS** et **CSRF**
+Se prémunir de la faille **XSS** et **CSRF**
 
 ___
 

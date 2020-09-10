@@ -17,7 +17,7 @@ ___
 
 ___
 
-#### 👨🏻‍💻 Manipulation
+👨🏻‍💻 Manipulation
 
 Créer un PDF affichant le détail d'un modèle
 
