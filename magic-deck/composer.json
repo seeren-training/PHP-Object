@@ -1,0 +1,10 @@
+{
+    "name": "cyril/magic-deck",
+    "authors": [
+        {
+            "name": "seeren",
+            "email": "consultant@seeren.fr"
+        }
+    ],
+    "require": {}
+}
