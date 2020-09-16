@@ -6,5 +6,12 @@
             "email": "consultant@seeren.fr"
         }
     ],
-    "require": {}
+    "require": {
+      "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "MagicDeck\\": "src/"
+        }
+    }
 }
