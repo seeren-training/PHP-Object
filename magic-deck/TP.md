@@ -1,130 +1,161 @@
-# 🎓  TP - PHP
-
-> ⚠️ The English skill is a transversal skill required by your referentiel
+# 🎓  TP - PHP Object
 
 **You will be evaluated on your ability to meet the following 📝 functional goals.**
 
-You can use `include`, `variable`, `conditionnal`, `loop`, `function` syntax, learn about http response with `echo` and `header` and are sensibilised about decompositoon with the `view` and the `controller` layout.
+You can use `class`, `attributs`, `methods`, `autoload`, `namespace`, `use`, `visbility`, `type hinting`, `api consume` syntax and are sensibilised about decompositoon with the `entity` and the `service` layout.
 
-## 🐣 Previously
+## 🦆 Previously
 
-You've work on implementing a function named `showAll` to display a list of vote.
+You've work on implementing a method named `findAll` from the `CardService` to retrieve a list of card from a web service.
 
-## 🐥 Now
+## 🐧 Now
 
-You're gonna continue on the function thematic and start to use language feature with super globales. 
-
-> It's really the time to write a function at one place, with the good path and to call her at an other place, seriously. Be risponsible of the code you produce, your futur job is to produce code by your own one time you have syntax and concept explaination.
+You're gonna make some conception to refactor your service method then it'll be time to implement the Controller layout and make some logic. 
 
 ___
 
-### 👨🏻‍💻 Functions
+### 👨🏻‍💻 Scaling
 
-> You have to continue your function implementation
+> 🛑 The idea is to refactor your code: tackle your technical debt.
 
-📝 The `showAll` function of the vote controller must display the list of votes.
+A method should have a maximum length of 20 line, use this rule to scale your code for a better reusability and train your naming and you notion of responsibility.
 
-#### **The vote issue**
+#### **The CardService issue**
 
-In your controller you create manually votes but now with functions we can make it easier. 
+The method do many things: *make an http request*, *create a file*, *read from a file*, *convert string*, *build card and colors*, *build api data*... make coffee?
 
-```php
-// So bad
-$voteA = new stdClass();
-$voteA->title = "Vote A";
-$voteA->active = true;
-$voteB = new stdClass();
-$voteB->title = "Vote B";
-$voteB->active = false;
-```
+📝 Thing about service class or classes with a sketchy class diagram to refactor your code, do not think to fast, stop on naming, arguments, types, return types: responsibility.
 
-📝 In the folder `src/entity` create a file named as you want who have a function named as you want. This function is responsible to create and provide a vote. Implements this function and use it in the controller for fix our issue.
+<p align="center">
+   <img src="https://raw.githubusercontent.com/seeren-training/PHP-Object/master/magic-deck/resources/uml/class/Service.jpg" width="60%" />
+</p>
 
-> We can understand from this manipulation that a good practice is to isolate our data structure far from controllers for better reutilisability and understanding. It is the `model` layout.
+
+[@see code](https://github.com/seeren-training/PHP-Object/blob/master/magic-deck/src/Service/CardService.php#L12)
 
 ___
 
-### 👨🏻‍💻 Superglobales
+### 👨🏻‍💻 CardController
 
-It's time to use the basic language to achieve some logic using new features.
+The controller is responsible to provide an http response.
 
-#### **Server**
+> 🛑 The idea is to implement Controller layout.
 
-> 🛑 The idea will be to display the vote list for the corresponding url.
+You know the rule: for an url path you must trigger a Controller method. The url must be analysed to take decisions.
 
-There is some global variables you can use anywhere in your program, we call them super globales. One of them is `$_SERVER`, it gave you information about the server parameters using an associative array. 
+📝 The url path "**/cards**" must trigger the `showAll` method from the `CardController`
 
-*Look at it using the code source page of your browser for a better line jump.*
+📝 The url path "**/cards?page=1**" must trigger the `showAll` method from the `CardController`
 
-```php
-var_dump($_SERVER);
+📝 The url path "**/cards?color=red**" must trigger the `showAll` method from the `CardController`
+
+📝 The url path "**/cards?page=2&color=red**" must trigger the `showAll` method from the `CardController`
+
+___
+
+🔎 Remember about the super global GET.
+
+You have to forge url:
+
+```html
+<a href="/votes?id=7">Vote</a>
 ```
 
-You can access safely to an element of this array using the `filter_input` function.
+You can retrieve query string paramter with `filter_input`:
 
 ```php
-$method = filter_input(INPUT_SERVER, "REQUEST_METHOD");
+$id = (int) filter_input(INPUT_GET, "id");
 ```
+___
 
-📝 On the entry point of your program, create an `$url `variable that correspond to the url path of your browser using the super global server and the filter_input function.
+🙉 Now that the controller is routed, we have to make the job.
 
-> Make the good choice, try different url in the browser to determine your choice.
+___
 
-📝 When the url value is `"/votes"`, display the vote list.
+📝 `Display` the list of card in HTML, use `templates` and all we learn.
 
-📝 Otherwise display an `404` error page.
+![image](https://raw.githubusercontent.com/seeren-training/PHP-Object/master/magic-deck/resources/wireframes/card-list.png)
 
-> 🤔 Display an error page.. so I have to create controller and view I think because it's the way we do it.
+> Forget about the "Deck" link and the "Rdd"/"Remove" links because the visitor is not a member.
 
-*It's time to requalify your template organisation, each controller must be represented by a folder and each function have to be representade by a file.*
+📝 `Display` the list of card by color, using "`red`", "`blue`", "`black`", "`green`", "`white`" and "" `color` parameter value.
+
+![image](https://raw.githubusercontent.com/seeren-training/PHP-Object/master/magic-deck/resources/wireframes/card-list-colors.png)
+
+📝 `Display` the list of card by page, using `number` for `page` parameter value.
+
+![image](https://raw.githubusercontent.com/seeren-training/PHP-Object/master/magic-deck/resources/wireframes/card-list-navigation.png)
+
+___
+
+🔎 Check the api documentation.
+
+[https://docs.magicthegathering.io/#api_v1cards_list](https://docs.magicthegathering.io/#api_v1cards_list)
+
+
+* Retrieve "Red" cards:
 
 ```bash
-templates/
-|
-└─ error/
-   └─ show.html.php
+https://api.magicthegathering.io/v1/cards?colors=red
 ```
 
-#### **Get**
+* Retieve cards from 100 to 200:
 
-> 🛑 The idea is to display one vote using url parameter.
-
-The `$_GET` super global give you information about parameters in the url in an associative array with parameters name and value. 
-
-For exemple, per the following url: `localhost:8000/?hello=world`, you will have an array with the key 'hello' and the value 'world'.
-
-*Look at for the url in exemple using the code source page of your browser for a better line jump.*
-
-```
-var_dump($_GET);
+```bash
+https://api.magicthegathering.io/v1/cards?page=2
 ```
 
-You can access safely to an element of this array using the `filter_input` function.
+* Retieve "Red" cards from 200 to 300:
 
-```php
-$hello = filter_input(INPUT_GET, "hello");
+```bash
+https://api.magicthegathering.io/v1/cards?page=2&colors=red
 ```
-
-📝 In your template, provide a link on each vote for consult them later using a property like id per exemple. The url path must be the following: `/votes?id=4`.
-
-*You will have to assign an id on each vote and will have to use this id to forge the url described.*
-
-```php
-$vote->id = 4;
-```
-
-📝 When the url value is `"/votes"` and a get parameter is present for the key id, for exemple `'?id=4'`, display the vote with the id `4`.
-
-
-📝 When a get parameter is present for the key id and that there is no vote for this id, explain in your template that the vote do not exists!.
-
-> Hey hey seriously wait me know I have to talk about the Post super global.
 
 ___
 
-## 🦆 Next
+🙈 It's a really strong logic job, but this is what we decided to do, so let's go. Hum, the controller method have to deal permanently with query param value... talk about logic, make diagrams, search solutions, it's a parameter incrementation logic job.
 
-📝 Use Bootstrap gride to master your element position and dimension.
+___
+
+### 👨🏻‍💻 Routing
+
+> 🛑 The idea is to route to others controllers.
+
+📝 The url path "**/user/login**" must trigger the `login` method from the `SecurityController`
+
+📝 The url path "**/user/create**" must trigger the `create` method from the `UserController`
+
+📝 The url path "**/cards/add?id=409741**" must trigger the `create` method from the `CardController`
+
+📝 The url path "**/cards/remove?id=409741**" must trigger the `remove` method from the `CardController`
+
+📝 The url path "**/deck**" must trigger the `showAll` method from the `DeckController`
+
+📝 The url path "**/deck?page=1**" must trigger the `showAll` method from the `DeckController`
+
+📝 The url path "**/deck?color=Red**" must trigger the `showAll` method from the `DeckController`
+
+📝 The url path "**/deck?page=2&color=Red**" must trigger the `showAll` method from the `DeckController`
+
+___
+
+## 🐬 Next
+
+An user can be interested to create an account to build his deck!
+
+📝 `Display` the  "account creation form" with the `create` method from the `UserController`.
+
+![image](https://raw.githubusercontent.com/seeren-training/PHP-Object/master/magic-deck/resources/wireframes/create.png)
+
+📝 `Validate` the "account creation form" form with `error display`.
+
+📝 `Insert the user` in the database when form is valid using `password_hash` for the password format then `redirect` him to the "user/login" url path.
+
+📝 `Display` a login with the `login` method from the `SecurityController`.
+
+![image](https://raw.githubusercontent.com/seeren-training/PHP-Object/master/magic-deck/resources/wireframes/login.png)
+
+> 🛑 Stop! We have to talk about user authentication and session!
 
 ___
 
