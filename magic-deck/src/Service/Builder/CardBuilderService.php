@@ -12,16 +12,16 @@ class CardBuilderService
         $cardList = [];
         $colorBuilder = new ColorBuilderService();
         foreach ($json->cards as $value) {
-            $card = new Card();
+            if (!property_exists($value, "imageUrl")) {
+                continue;
+            }
             if (!property_exists($value, "text")) {
                 $value->text = "";
-            }
-            if (!property_exists($value, "imageUrl")) {
-                $value->imageUrl = "";
             }
             if (!property_exists($value, "manaCost")) {
                 $value->manaCost = "";
             }
+            $card = new Card();
             $card->setManaCost($value->manaCost);
             $card->setName($value->name);
             $card->setDescription($value->text);
