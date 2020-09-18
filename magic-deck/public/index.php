@@ -6,4 +6,6 @@ include __DIR__ . "/../vendor/autoload.php";
 
 $service = new CardService();
 
-var_dump($service->findAll());
+var_dump(
+    $service->findAll()
+);
