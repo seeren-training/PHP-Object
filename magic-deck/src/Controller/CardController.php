@@ -9,8 +9,7 @@ class CardController
 
     public function showAll(): void
     {
-        $cardService = new CardService();
-        $cardList = $cardService->findAll();
+        $cardList = (new CardService())->findAll();
         include __DIR__ . "/../../templates/card/show-all.php";
     }
 

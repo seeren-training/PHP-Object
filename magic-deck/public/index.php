@@ -1,12 +1,10 @@
 <?php
 
-use MagicDeck\Controller\CardController;
 
 include __DIR__ . "/../vendor/autoload.php";
 
 $url = filter_input(INPUT_SERVER, "REQUEST_URI");
 
 if ("/cards" === $url || "/cards?" === substr($url, 0, 7)) {
-    $controller = new CardController();
-    $controller->showAll();
+    (new \MagicDeck\Controller\CardController())->showAll();
 }

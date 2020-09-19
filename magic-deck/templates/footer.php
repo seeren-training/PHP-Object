@@ -1,8 +1,10 @@
-<footer class="page-footer">
+<footer class="page-footer grey darken-4">
     <div class="footer-copyright">
         <div class="container">
-            © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            © 2020 PHP Object
+            <a class="grey-text text-lighten-4 right" target="_blank" href="https://github.com/seeren-training/PHP-Object/tree/master/magic-deck">
+                Repository
+            </a>
         </div>
     </div>
 </footer>

@@ -1,8 +1,6 @@
 <?php
 
-
 namespace MagicDeck\Entity;
-
 
 class User
 {
@@ -78,6 +76,5 @@ class User
     {
         $this->cardList = $cardList;
     }
-
 
 }

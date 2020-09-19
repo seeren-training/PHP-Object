@@ -1,8 +1,6 @@
 <?php
 
-
 namespace MagicDeck\Entity;
-
 
 class Color
 {
