@@ -6,5 +6,4 @@
     <a href="?color=black" class="waves-effect waves-light btn black">Black</a>
     <a href="?color=blue" class="waves-effect waves-light btn blue">Blue</a>
     <a href="?color=white" class="waves-effect waves-light btn white black-text">White</a>
-    <a href="?color=" class="waves-effect waves-light btn white grey darken-1">Empty</a>
 </div>

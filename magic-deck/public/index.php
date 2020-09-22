@@ -1,6 +1,5 @@
 <?php
 
-
 include __DIR__ . "/../vendor/autoload.php";
 
 $url = filter_input(INPUT_SERVER, "REQUEST_URI");

@@ -8,13 +8,13 @@ use MagicDeck\Service\Builder\CardBuilderService;
 class CardService
 {
 
-    public function findAll(): array
+    public function findAll(array $optionList): array
     {
-        return (new CardBuilderService())
-            ->buildCardList((new ApiService())->fetch(
-                "https://api.magicthegathering.io/v1/cards",
-                "cards.json"
-            )->cards);
+        $queryString = http_build_query($optionList);
+        return (new CardBuilderService())->buildCardList((new ApiService())->fetch(
+            "https://api.magicthegathering.io/v1/cards?$queryString",
+            "cards.$queryString.json"
+        )->cards);
     }
 
 }
