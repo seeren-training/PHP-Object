@@ -16,10 +16,12 @@
         <a data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li class="active"><a href="/cards">Cards</a></li>
+            <li class="active"><a href="/user/create">Create acount</a></li>
         </ul>
     </div>
 </nav>
 
 <ul class="sidenav" id="mobile-demo">
     <li class="active"><a href="/cards">Cards</a></li>
+    <li class="active"><a href="/user/create">Create acount</a></li>
 </ul>

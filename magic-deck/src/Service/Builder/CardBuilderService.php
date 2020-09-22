@@ -11,7 +11,7 @@ class CardBuilderService
     {
         $cardList = [];
         $colorBuilder = new ColorBuilderService();
-        $apiCardBuilder = new ApiCardBuilderService();
+        $apiCardBuilder = new MagicCardBuilderService();
         foreach ($apiCardList as $value) {
             $apiCardBuilder->buildCard($value);
             if ($value->imageUrl) {
