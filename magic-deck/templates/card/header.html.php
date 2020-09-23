@@ -1,4 +1,4 @@
-<?php include __DIR__ . "/../header.php" ?>
+<?php include __DIR__ . "/../header.html.php" ?>
 
 <div class="nav-extended filter right-align">
     <a href="?colors=red" class="waves-effect waves-light btn red">Red</a>

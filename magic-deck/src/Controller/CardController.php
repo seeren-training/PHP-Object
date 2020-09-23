@@ -10,7 +10,7 @@ class CardController extends Controller
 
     public function showAll(): void
     {
-        $this->render("card/show-all.php", [
+        $this->render("card/show-all.html.php", [
             "optionList" => $optionList = (new MagicCardBuilderService())->buildOptionList(),
             "cardList" => (new CardService())->findAll($optionList),
         ]);

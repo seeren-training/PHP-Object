@@ -5,13 +5,10 @@ namespace MagicDeck\Controller;
 class Controller
 {
 
-    protected string $pathTemplate = __DIR__ . "/../../templates/";
-
-    public function render(string $pathName, array $values)
+    public function render(string $template, array $vars = []): bool
     {
-
-        extract($values);
-        include $this->pathTemplate . $pathName;
+        extract($vars);
+        return include __DIR__ . "/../../templates/" . $template;
     }
 
 }

@@ -1,4 +1,4 @@
-<?php include __DIR__ . "/header.php" ?>
+<?php include __DIR__ . "/header.html.php" ?>
 
 <main>
     <div class="container">
@@ -19,4 +19,4 @@
     </div>
 </main>
 
-<?php include __DIR__ . "/footer.php" ?>
+<?php include __DIR__ . "/footer.html.php" ?>
