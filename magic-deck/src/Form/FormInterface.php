@@ -2,24 +2,6 @@
 
 namespace MagicDeck\Form;
 
-/**
- * Describe Forms interactions
- *
- * @example
- * <code>
- *      $entity = new Foo();
- *      $form = new FooForm();
- *      $errorList = $form->fill($entity);
- *      if ($form->isSubmitted() && $form->isValid()) {
- *          // make database manipulation
- *      }
- *      $this->render("template.html.php", [
- *          "foo" => $entity,
- *          "errorList" => $errorList
- *      ];
- * </code>
- *
- */
 interface FormInterface
 {
 

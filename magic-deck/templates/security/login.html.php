@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <h1>
-                Create account
+                Login
             </h1>
         </div>
         <div class="row">
@@ -13,12 +13,19 @@
                     <div class="input-field col s12 m8">
                         <input value="<?= filter_var($user->getEmail(), FILTER_SANITIZE_FULL_SPECIAL_CHARS) ?>"
                                id="email" type="email" name="email"
-                               class="validate <?= array_key_exists("email", $errorList) ? "invalid" : "" ?>"/>
+                               class="validate <?= array_key_exists("email", $errorList)
+                               || array_key_exists("user", $errorList) ? "invalid" : "" ?>"/>
                         <label for="email">Email</label>
                         <?php if (array_key_exists("email", $errorList)): ?>
-                            <span class="helper-text" data-error="Email must be available"
+                            <span class="helper-text" data-error="Email must be a valid adress"
                                   data-success="">
                                 Email
+                            </span>
+                        <?php endif ?>
+                        <?php if (array_key_exists("user", $errorList)): ?>
+                            <span class="helper-text" data-error="Wrong email or password"
+                                  data-success="">
+                                Account
                             </span>
                         <?php endif ?>
                     </div>
@@ -37,21 +44,14 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s12 m8">
-                        <input id="confirm" type="password" name="confirm"
-                               class="validate <?= array_key_exists("confirm", $errorList) ? "invalid" : "" ?>"/>
-                        <label for="confirm">Confirm</label>
-                        <?php if (array_key_exists("confirm", $errorList)): ?>
-                            <span class="helper-text" data-error="Confirmation must match password" data-success="">
-                                Confirm
-                            </span>
-                        <?php endif ?>
-                    </div>
-                </div>
-                <div class="row">
-                    <input class="btn btn-primary" type="submit" name="user-create" value="Create"/>
+                    <input class="btn btn-primary" type="submit" name="user-login" value="Login"/>
                 </div>
             </form>
+        </div>
+        <div class="row">
+            <h6>
+                Do not have account? <a href="/user/create">Create an account to manage deck.</a>
+            </h6>
         </div>
     </div>
 </main>

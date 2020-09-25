@@ -1,52 +1,36 @@
-# Fetch card List
+# Magic Deck
 
-This project is a deck builder for Magic The Gathering card game.
+## Install
 
-## Objectif
+Download the repository
 
-### Retrieve data from web service
-Implements a method to retrieve a Card collection (return an array with cards). 
-In a file `Service/CardService.php` and in a class `CardService` and in the method `findAll`.
-
-* getCards
-* get
-* retieveAll
-* fetchAll
-* findAll
-* findAllByColor
-* findAllByPage
-
-### Syntaxe needed
-
-* Fetch data
-
-```php
-$url = "https://api.magicthegathering.io/v1/cards";
-$jsonString = file_get_contents($url);
+```bash
+git clone https://github.com/seeren-training/PHP-Object
 ```
 
-* Convert JSON string in object
+Change the directory
 
-```php
-$jsonObject = json_decode($jsonString);
+```bash
+cd magic-deck/public
 ```
 
-* Store response in cache
+Install packages
 
-```php
-file_put_contents(__DIR__ . "/../var/cache/cards.json", $jsonString);
+```bash
+npm install
 ```
 
-### More
+Import [magic_deck.sql](./magic_deck.sql)
 
-* Convert objects in string
+## Run
 
-```php
-$objectSerialized = serialize($jsonObject);
+Start the server
+
+```bash
+php -S localhost:8000
 ```
 
-* Convert string in object
 
-```php
-$jsonObject = unserialize($objectSerialized);
-```
+
+
+

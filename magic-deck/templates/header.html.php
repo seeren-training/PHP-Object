@@ -16,12 +16,22 @@
         <a data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li class="active"><a href="/cards">Cards</a></li>
-            <li class="active"><a href="/user/create">Create acount</a></li>
+            <?php if (!$session->get("user")): ?>
+                <li class="active"><a href="/user/login">Login</a></li>
+            <?php else: ?>
+                <li class="active"><a href="/deck">Deck</a></li>
+                <li class="active"><a href="/user/logout">Logout</a></li>
+            <?php endif ?>
         </ul>
     </div>
 </nav>
 
 <ul class="sidenav" id="mobile-demo">
     <li class="active"><a href="/cards">Cards</a></li>
-    <li class="active"><a href="/user/create">Create acount</a></li>
+    <?php if (!$session->get("user")): ?>
+        <li class="active"><a href="/user/login">Login</a></li>
+    <?php else: ?>
+        <li class="active"><a href="/deck">Deck</a></li>
+        <li class="active"><a href="/user/logout">Logout</a></li>
+    <?php endif ?>
 </ul>
