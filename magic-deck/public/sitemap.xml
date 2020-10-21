@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>http://seeren.alwaysdata.net/</loc>
+        <lastmod>2020-10-21</lastmod>
+    </url>
+    <url>
+        <loc>http://seeren.alwaysdata.net/cards</loc>
+        <lastmod>2020-10-21</lastmod>
+    </url>
+    <url>
+        <loc>http://seeren.alwaysdata.net/cards/red</loc>
+        <lastmod>2020-10-21</lastmod>
+    </url>
+    <url>
+        <loc>http://seeren.alwaysdata.net/cards/green</loc>
+        <lastmod>2020-10-21</lastmod>
+    </url>
+    <url>
+        <loc>http://seeren.alwaysdata.net/cards/black</loc>
+        <lastmod>2020-10-21</lastmod>
+    </url>
+    <url>
+        <loc>http://seeren.alwaysdata.net/cards/blue</loc>
+        <lastmod>2020-10-21</lastmod>
+    </url>
+    <url>
+        <loc>http://seeren.alwaysdata.net/cards/white</loc>
+        <lastmod>2020-10-21</lastmod>
+    </url>
+</urlset>

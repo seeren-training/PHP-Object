@@ -1,0 +1,7 @@
+.idea
+config/prod/database.json
+public/node_modules
+public/package-lock.json
+var/cache/*.json
+var/log/*.log
+vendor
