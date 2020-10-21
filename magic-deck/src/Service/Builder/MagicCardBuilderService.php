@@ -5,13 +5,11 @@ namespace MagicDeck\Service\Builder;
 class MagicCardBuilderService
 {
 
-    public function buildOptionList(): array
+    public function buildOptionList(string $color = null): array
     {
+
         $optionList = [];
-        if (in_array(
-            $color = filter_input(INPUT_GET, "colors"),
-            ["red", "green", "blue", "black", "white"]
-        )) {
+        if ($color) {
             $optionList["colors"] = $color;
         }
         if (!($optionList["page"] = (int)filter_input(INPUT_GET, "page"))) {

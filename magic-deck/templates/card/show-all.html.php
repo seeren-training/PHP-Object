@@ -13,7 +13,7 @@
         </div>
         <div class="row">
             <?php foreach ($cardList as $card) : ?>
-                <img class="magic-card col s6 m4 l3 xl2" src="<?= $card->getImage() ?>"/>
+                <img alt="<?= $card->getName() ?>" class="magic-card col s6 m4 l3 xl2" src="<?= $card->getImage() ?>"/>
             <?php endforeach ?>
         </div>
     </div>

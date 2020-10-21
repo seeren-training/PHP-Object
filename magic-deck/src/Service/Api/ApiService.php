@@ -2,6 +2,8 @@
 
 namespace MagicDeck\Service\Api;
 
+use stdClass;
+
 class ApiService
 {
 
@@ -12,7 +14,7 @@ class ApiService
         $this->includePath = __DIR__ . "/../../../var/cache/";
     }
 
-    public function fetch(string $url, string $filename): \stdClass
+    public function fetch(string $url, string $filename): ?stdClass
     {
         $filename = $this->includePath . $filename;
         if (!file_exists($filename)) {

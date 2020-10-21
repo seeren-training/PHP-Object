@@ -11,7 +11,9 @@ class ServiceManager
 
     public function __construct()
     {
-        $config = json_decode(file_get_contents(__DIR__ . "/../../../config/database.json"));
+        $config = json_decode(
+            file_get_contents(__DIR__ . "/../../../config/" . ENV . "/database.json")
+        );
         ServiceManager::$connection = new PDO(
             $config->dsn,
             $config->user,

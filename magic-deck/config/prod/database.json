@@ -1,0 +1,5 @@
+{
+  "dsn": "mysql:host=mysql-seeren.alwaysdata.net;dbname=seeren_magic_deck;charset=UTF8",
+  "user": "seeren",
+  "password": "G9sy72ue_Er"
+}

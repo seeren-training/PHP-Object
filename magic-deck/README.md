@@ -1,6 +1,7 @@
 # Magic Deck
 
-## Install
+## Installation
+
 
 Download the repository
 

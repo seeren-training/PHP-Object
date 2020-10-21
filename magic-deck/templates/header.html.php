@@ -11,16 +11,17 @@
 <body>
 
 <nav class="nav-extended grey darken-4">
+
     <div class="nav-wrapper">
         <a href="/" class="brand-logo">Magic Deck Builder</a>
         <a data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <ul class="right hide-on-med-and-down">
             <li class="active"><a href="/cards">Cards</a></li>
             <?php if (!$session->get("user")): ?>
-                <li class="active"><a href="/user/login">Login</a></li>
+                <li class="active"><a href="/user/login" rel="nofollow">Login</a></li>
             <?php else: ?>
                 <li class="active"><a href="/deck">Deck</a></li>
-                <li class="active"><a href="/user/logout">Logout</a></li>
+                <li class="active"><a href="/user/logout" rel="nofollow">Logout</a></li>
             <?php endif ?>
         </ul>
     </div>
@@ -29,9 +30,9 @@
 <ul class="sidenav" id="mobile-demo">
     <li class="active"><a href="/cards">Cards</a></li>
     <?php if (!$session->get("user")): ?>
-        <li class="active"><a href="/user/login">Login</a></li>
+        <li class="active"><a href="/user/login" rel="nofollow">Login</a></li>
     <?php else: ?>
         <li class="active"><a href="/deck">Deck</a></li>
-        <li class="active"><a href="/user/logout">Logout</a></li>
+        <li class="active"><a href="/user/logout" rel="nofollow">Logout</a></li>
     <?php endif ?>
 </ul>
