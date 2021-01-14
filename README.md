@@ -4,11 +4,9 @@
 
 56 heures
 
-___
+## Public concerné
 
-## Prérequis
-
-Avoir participé au module PHP
+Programmeurs, responsables informatiques, développeurs d'applications et spécialistes de bases de données.
 
 ___
 
