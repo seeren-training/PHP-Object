@@ -96,7 +96,7 @@ Manipuler la couche modèle avec une base de données.
 
 ___
 
-##  📑 Limites de PDO
+## 📑 Limites de PDO
 
 PDO par ne procède pas à un mapping objet lors d'une lecture de tables en relation et les résultats ne reflètent pas nos agrégations. Le SQL à écrire et à maintenir représente une tache fastidieuse et le nombre d'instance en vie de PDO ne possède pas de gestionnaire.
 
