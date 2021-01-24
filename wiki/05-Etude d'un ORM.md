@@ -40,7 +40,7 @@ Il est important d'indiquer le cache à false en cinquième argument du Setup po
 
 ___
 
-## 📑 [Le mode "commande"](https://www.doctrine-project.org/projects/doctrine-orm/en/2.7/tutorials/getting-started.html#generating-the-database-schema)
+## 📑 [Le mode commande](https://www.doctrine-project.org/projects/doctrine-orm/en/2.7/tutorials/getting-started.html#generating-the-database-schema)
 
 Doctrine possède un binary pour pouvoir exécuter des commandes. Pour l'utiliser il attend de trouver le fichier suivant:
 
