@@ -66,6 +66,6 @@ ___
 
 Php propose plusieurs **Proposed Standard Recommandation** qu'il faut analyser pour adopter les bonnes pratiques.
 
-[PRS-1/](https://www.php-fig.org/psr/psr-1/)
+[PRS-1](https://www.php-fig.org/psr/psr-1/)
 
-[PSR-2/](https://www.php-fig.org/psr/psr-2/)
+[PSR-2](https://www.php-fig.org/psr/psr-2/)
