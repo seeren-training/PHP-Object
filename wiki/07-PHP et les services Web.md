@@ -9,7 +9,7 @@ ___
 
 ## 📑 Introduction aux services Web
 
-Les langages back peuvent s'orienter `sans état` pour ne fournir que de la donnée à un client. **Les formats interchanges principaux sont le `XML` et le `JSON`**.
+Les langages back peuvent s'orienter `sans état` pour ne fournir que de la donnée à un client. Les formats interchanges principaux sont le `XML` et le `JSON`.
 
 ___
 
