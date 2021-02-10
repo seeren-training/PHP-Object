@@ -9,6 +9,8 @@ ___
 
 ## 📑 [Installation](https://packagist.org/packages/doctrine/orm)
 
+L'orm `doctrine` s'installe avec composer en ligne de commande.
+
 ```bash
 composer require doctrine/orm
 ```
@@ -17,7 +19,7 @@ composer require doctrine/orm
 
 Un **fichier de configuration** est nécessaire pour créer notre manager de la couche modèle.
 
-*config/bootstrap.php*
+* config/bootstrap.php
 
 ```php
 use Doctrine\ORM\Tools\Setup;
@@ -43,6 +45,8 @@ ___
 ## 📑 [Le mode commande](https://www.doctrine-project.org/projects/doctrine-orm/en/2.7/tutorials/getting-started.html#generating-the-database-schema)
 
 Doctrine possède un binary pour pouvoir exécuter des commandes. Pour l'utiliser il attend de trouver le fichier suivant:
+
+* config/cli-config.php
 
 ```php
 use Doctrine\ORM\Tools\Console\ConsoleRunner;
@@ -70,9 +74,9 @@ ___
 
 ### 🏷️ **Database First**
 
-* Création des classes:
+* Création des classes
 
-**Notre couche modèle peu être générée** en ligne de commande à partir d'une base possédant des tables.
+Notre couche modèle peu être générée en ligne de commande à partir d'une base possédant des tables.
 
 ```bash
 vendor/bin/doctrine orm:convert-mapping annotation src/Entity --from-database
@@ -80,7 +84,7 @@ vendor/bin/doctrine orm:convert-mapping annotation src/Entity --from-database
 
 Bien que la commande suivante soit dépréciée il est possible de générer les getters/setters. Préférez utiliser votre IDE.
 
-* Générer les getters/setters:
+* Générer les getters/setters
 
 ```bash
 vendor/bin/doctrine orm:generate:entities src/Entity
@@ -96,7 +100,7 @@ ___
 
 ### 🏷️ **Génération de la base**
 
-**Les tables de la base de donnée** spécifiée dans le fichier de configuration peut être généré avec la commande suivante:
+Les tables de la base de donnée spécifiée dans le fichier de configuration peut être généré avec la commande suivante:
 
 ```bash
 vendor/bin/doctrine orm:schema-tool:create
@@ -104,7 +108,7 @@ vendor/bin/doctrine orm:schema-tool:create
 
 ___
 
-### 🏷️ [**Les annotations**](https://www.doctrine-project.org/projects/doctrine-orm/en/2.7/reference/annotations-reference.html)
+### 🏷️ **Les annotations**
 
 Les annotations permettent à doctrine de renseigner des meta données sur la classe et ses attributs pour pouvoir la mapper sur la table qui la représente et ses colonnes.
 
@@ -112,7 +116,7 @@ Les annotations permettent à doctrine de renseigner des meta données sur la cl
 
 Pour la lecture, la bonne pratique est de **stocker la formulation des requêtes** dans la couche `Repository`.
 
-* Annotation:
+* Annotation
 
 La classe doit spécifier quel repository lui est rattaché.
 
@@ -120,7 +124,7 @@ La classe doit spécifier quel repository lui est rattaché.
 @ORM\Entity(repositoryClass="App\Repository\ProductRepository")
 ```
 
-* Générer:
+* Générer
 
 ```bash
 vendor/bin/doctrine orm:generate:repositories src/Entity
@@ -138,13 +142,13 @@ ___
 
 Les clefs primaires sont des valeurs générées et font parties de l'identité de la table. **Aucun setter ne devrait modifier une clef primaire**. En ce qui concerne les indexes unique il y a deux syntaxes possibles.
 
-* Sur la table:
+* Sur la table
 
 ```bash
 @ORM\Table(name="product", uniqueConstraints={@ORM\UniqueConstraint(name="color", columns={"color"})})
 ```
 
-* Sur les colonnes:
+* Sur les colonnes
 
 ```bash
 @ORM\Column(name="color", type="string", length=64, unique=true)
@@ -160,23 +164,22 @@ Pour effectuer des modifications sur les données comme une insertion, mise à j
 
 ```php
 require __DIR__ . '/bootstrap.php';
-var_dump($entityManager);
 ```
 
-* Insertion:
+* Insertion
 
 ```php
 $entityManager->persist($entity);
 $entityManager->flush();
 ```
 
-* Mise à jour:
+* Mise à jour
 
 ```php
 $entityManager->flush();
 ```
 
-* Suppression:
+* Suppression
 
 ```php
 $entityManager->remove($entity);
@@ -189,28 +192,27 @@ Pour lire les données **il faut utiliser le repertoire associé à l'entity**.
 
 ```php
 $repository = $entityManager->getRepository(Product::class);
-var_dump($repository);
 ```
 
-* Plusieurs lignes:
+* Plusieurs lignes
 
 ```php
 $entities = $repository->findAll();
 ```
 
-* Plusieurs lignes par critère:
+* Plusieurs lignes par critère
 
 ```php
 $entities = $repository->findByColor("Rouge");
 ```
 
-* Une ligne:
+* Une ligne
 
 ```php
 $entity = $repository->find($id);
 ```
 
-* Une ligne  par critère:
+* Une ligne  par critère
 
 ```php
 $entity = $repository->findOneByColor("Rouge");
