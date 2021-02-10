@@ -134,4 +134,6 @@ ___
 
 ## 📑 Mapping objet relationnel et Data Access Layer
 
-Un ORM `définit une correspondance entre le schéma de notre base de données et de notre application`. Les classes sont des tables et leur manipulation peut modifier leur état en base de données via un manager. L'ORM [Doctrine](https://www.doctrine-project.org/projects/orm.html) utilisé sur la Framework [Symfony](https://symfony.com/) sera notre sujet de démonstration.
+Un ORM définit une correspondance entre le schéma de notre base de données et de notre application. 
+
+Les classes sont des tables et leur manipulation peut modifier leur état en base de données via un manager. L'ORM `Doctrine` utilisé par le Framework `Symfony` sera notre sujet de démonstration.
