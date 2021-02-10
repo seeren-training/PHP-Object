@@ -10,19 +10,21 @@ ___
 
 Faire du pas à pas ou générer un rapport d’exécution permet de mettre en avant les problèmes de conception et d’algorithmie.
 
-### 🏷️ [**XDebug**](https://xdebug.org/)
+### 🏷️ **XDebug**
 
-* Installation:
+[XDebug](https://xdebug.org/)
 
-Utiliser le wizard pour choisir la version à télécharger puis déplacer le fichier téléchargé dans **C:/serveur/php/ext/**.
+* Installation
 
-* Activation:
+Utiliser le wizard pour choisir la version à télécharger puis déplacer le fichier téléchargé dans "C:/serveur/php/ext/".
+
+* Activation
 
 ```ini
 zend_extension=php_xdebug-2.9.5-7.4-vc15-x86_64.dll
 ```
 
-* Profiler:
+* Profiler
 
 ```ini
 xdebug.profiler_enable = 1
@@ -30,9 +32,11 @@ xdebug.profiler_output_dir = "tmp"
 xdebug.profiler_output_name = "cachegrind.out.%R"
 ```
 
-* Lecture:
+* Lecture
 
-Qcachegrind: https://sourceforge.net/projects/qcachegrindwin/files/latest/download
+Il faut un lecteur de profils pour les exploiter. `Qcachegrind` est un lecteur gratuit.
+
+[Qcachegrind](https://sourceforge.net/projects/qcachegrindwin/files/latest/download)
 
 ___
 
@@ -44,11 +48,11 @@ ___
 
 ## 📑 Mise en cache et compression
 
-* [Compression.php](https://www.php.net/manual/fr/filters.compression.php)
+[Compression](https://www.php.net/manual/fr/filters.compression.php)
 
-* [Opcache.php](https://www.php.net/manual/fr/book.opcache.php)
+[Accélérateur PHP](https://www.php.net/manual/fr/book.opcache.php)
 
-* [PSR-6](https://www.php-fig.org/psr/psr-6/)
+[Standard de cache](https://www.php-fig.org/psr/psr-6/)
 
 ___
 
@@ -60,6 +64,8 @@ ___
 
 ## 📑 Les solutions de codage à retenir
 
-* [PRS-1/](https://www.php-fig.org/psr/psr-1/)
+Php propose plusieurs **Proposed Standard Recommandation** qu'il faut analyser pour adopter les bonnes pratiques.
 
-* [PSR-2/](https://www.php-fig.org/psr/psr-2/)
+[PRS-1/](https://www.php-fig.org/psr/psr-1/)
+
+[PSR-2/](https://www.php-fig.org/psr/psr-2/)
