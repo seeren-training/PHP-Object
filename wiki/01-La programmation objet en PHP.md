@@ -26,7 +26,7 @@ class Sudent
 
 Un objet est une `instance` de classe.
 
-![image](https://raw.githubusercontent.com/seeren-training/JavaScript-Object/master/wiki/resources/object.jpg)
+![image](https://raw.githubusercontent.com/seeren-training/PHP-Object/master/wiki/resources/object.png)
 
 ```php
 $student = new Sudent();
@@ -40,15 +40,15 @@ $student = new Sudent();
 class Sudent
 {
 
-    function sayHello(): void
+    public function sayHello(): void
     {
-        echo "Hello";
+        echo 'Hello';
     }
 
 }
 ```
 
-* Invocation:
+* Invocation
 
 ```php
 $student = new Sudent();
@@ -57,28 +57,28 @@ $student->sayHello();
 
 ### 🏷️ **Propriétés**
 
-* Déclaration:
+* Déclaration
 
 ```php
 class Sudent
 {
 
-    public string $message = "Hello";
+    public string $message = 'Hello';
 
 }
 ```
 
-* Utilisation:
+* Utilisation
 
-Le mot clef `$this` correspond à l'objet (l'instance) en cours de manipulation.
+Le mot clef `$this` correspond à l'objet en cours de manipulation.
 
 ```php
 class Sudent
 {
 
-    public string $message = "Hello";
+    public string $message = 'Hello';
 
-    function sayHello(): void
+    public function sayHello(): void
     {
         echo $this->message;
     }
@@ -100,7 +100,7 @@ ___
 
 ## 📑 [Visibilité des attributs](https://www.php.net/manual/fr/language.oop5.visibility.php)
 
-### 🏷️ **public**
+### 🏷️ **Public**
 
 ```php
 class Sudent
@@ -114,9 +114,9 @@ $student = new Sudent();
 $student->message = "World";
 ```
 
-Un attribut ou une méthode public est accessible partout.
+Un attribut ou une méthode `public` est accessible partout.
 
-###  🏷️ **private**
+###  🏷️ **Private**
 
 ```php
 class Sudent
@@ -135,11 +135,11 @@ $student = new Sudent();
 $student->message = "World"; // Fatal Error
 ```
 
-Un attribut ou une méthode private est accessible à la classe elle même.
+Un attribut ou une méthode `private` est accessible à la classe elle même.
 
-**La bonne pratique consiste à ne pas déclarer les propriétés public** pour ne pas compromettre l'intégrité des données et préserver le bon fonctionnement des méthodes. **En revanche les méthodes sont public** parce qu'elles permettent une interaction avec l'extérieur de la classe et toute autre visibilité est une faute conceptuelle.
+La bonne pratique consiste à ne pas déclarer les propriétés public pour ne pas compromettre l'intégrité des données et préserver le bon fonctionnement des méthodes. En revanche les méthodes sont public parce qu'elles permettent une interaction avec l'extérieur de la classe et toute autre visibilité est une faute conceptuelle.
 
-### 🏷️ **protected**
+### 🏷️ **Protected**
 
 ```php
 class Sudent
@@ -153,7 +153,7 @@ $student = new Sudent();
 echo $student->message; // Fatal Error
 ```
 
-Un attribut ou une méthode protected est accessible à la classe elle même et ses parents/enfants, **ce niveau de visibilité concerne l'héritage**.
+Un attribut ou une méthode `protected` est accessible à la classe elle même et ses parents/enfants, **ce niveau de visibilité concerne l'héritage**.
 
 ___
 
@@ -166,7 +166,7 @@ ___
 ## 📑 [Le constructeur](https://www.php.net/manual/fr/language.oop5.decon.php)
 
 
-* Déclaration:
+* Déclaration
 
 ```php
 class Sudent
@@ -201,9 +201,11 @@ ___
 
 ### 🏷️ **[L'héritage](https://www.php.net/manual/fr/language.oop5.inheritance.php)**
 
-Une classe peut hériter d'une autre avec le mot clef **extends**. Elle peut **accéder à l'ensemble des propriétés et méthodes qui ne sont pas private**. L'héritage permet de `factoriser` des fonctionnalités dans la classe parente et pouvoir les utiliser dans plusieurs classes enfants. Il est possible d'utiliser extends avec une seule classe parente.
+Une classe peut hériter d'une autre avec le mot clef `extends`. Elle peut **accéder à l'ensemble des propriétés et méthodes qui ne sont pas private**.
 
-* Déclaration:
+L'héritage permet de `factoriser` des fonctionnalités dans la classe parente et pouvoir les utiliser dans plusieurs classes enfants. Il est possible d'utiliser extends avec une seule classe parente.
+
+* Déclaration
 
 ```php
 class Person
@@ -225,9 +227,11 @@ $student = new Sudent();
 $student->message = "World";
 ```
 
-* Construction:
+* Construction
 
-Si l'enfant possède un constructeur il sera invoqué. Si le parent possède un constructeur et que l'enfant ne l'a pas déclaré il sera invoqué. **En présence des deux constructeurs il faut invoquer le constructeur parent** depuis l'enfant afin qu'il puisse initialiser l'objet correctement.
+Si l'enfant possède un constructeur il sera invoqué. Si le parent possède un constructeur et que l'enfant ne l'a pas déclaré il sera invoqué.
+
+En présence des deux constructeurs il faut invoquer le constructeur `parent` depuis l'enfant afin qu'il puisse initialiser l'objet correctement.
 
 ```php
 class Person
@@ -267,10 +271,9 @@ ___
 ### 🏷️ **[Les interfaces](https://www.php.net/manual/fr/language.oop5.interfaces.php)**
 
 
+Une `interface` n'est pas instanciable, elle déclare des prototypes de méthodes public. En implémentant une interface, la classe devient du type de l'interface en proposant un **standard d’interaction**.
 
-**Une interface n'est pas instanciable, elle déclare des signatures de méthodes public**. En implémentant une interface, la classe devient du type de l'interface en proposant un **standard d’interaction**.
-
-* Déclaration:
+* Déclaration
 
 ```php
 interface StudentInterface
@@ -281,7 +284,7 @@ interface StudentInterface
 }
 ```
 
-* Utilisation:
+* Utilisation
 
 Une classe implémentant l'interface doit respecter les signatures déclarées.
 
@@ -326,32 +329,20 @@ Déclarer et implémenter une interface pour standardiser une fonctionnalité.
 
 ___
 
-## [Gestion des exceptions en PHP objet](https://www.php.net/manual/fr/class.exception.php)
+### 🏷️ [Gestion des exceptions](https://www.php.net/manual/fr/class.exception.php)
 
 Il est possible de créer ses propres exceptions en utilisant les notions abordées.
 
-* Déclaration:
+* Déclaration
 
 ```php
 class StudentException extends Exception
 {
 
-    public function __construct(
-        $message = "Student exception",
-        $code = 0, 
-        Throwable $previous = null)
-    {
-        parent::__construct(
-            $message,
-            $code,
-            $previous
-        );
-    }
-
 }
 ```
 
-* Utilisation:
+* Utilisation
 
 L'avantage est de pouvoir attraper une exception précise.
 
@@ -369,5 +360,3 @@ ___
 👨🏻‍💻 Manipulation
 
 Créer une Exception et l'utiliser dans un cas de figure pertinent.
-
-___
