@@ -8,7 +8,7 @@ ___
 
 ## 📑 [SimpleXML](https://www.php.net/manual/fr/simplexml.examples-basic.php)
 
-* Construction:
+* Construction
 
 ```php
 $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8" ?><product/>');
@@ -16,7 +16,7 @@ $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8" ?><product/>')
 
 ### 🏷️ **Ajouter un enfant**
 
-* Enfant sans contenu:
+* Enfant sans contenu
 
 ```php
 $child = $xml->addChild("color");
@@ -74,22 +74,23 @@ Plusieurs fonctions  analyse des fichiers xml et displose d'une **Simple Api for
 
 ### 🏷️ **DOM**
 
-Php possède un [**Document Model Object**](https://www.php.net/manual/fr/class.domdocument.php).
+Php possède un **Document Model Object**.
 
+[Document Model Object](https://www.php.net/manual/fr/class.domdocument.php)
 
-* Construction:
+* Construction
 
 ```php
 $dom = new DOMDocument('1.0', 'UTF-8');
 ```
 
-* Ajouter un enfant:
+* Ajouter un enfant
 
 ```php
 $element = $dom->createElement("product");
 ```
 
-* Ajouter du contenu:
+* Ajouter du contenu
 
 ```php
 $text = $dom->createTextNode("Hello");
@@ -97,19 +98,19 @@ $element->appendChild($text);
 $dom->appendChild($element);
 ```
 
-* Ajouter un attribut:
+* Ajouter un attribut
 
 ```php
 $element->setAttribute("rate", 5);
 ```
 
-* Accéder à un enfant:
+* Accéder à un enfant
 
 ```php
 $element = $dom->getElementsByTagName("product")[0]
 ```
 
-* Accéder à un contenu:
+* Accéder à un contenu
 
 ```php
 $dom->saveXML($element);
@@ -125,11 +126,7 @@ ___
 
 ### 🏷️ **Parseurs XML**
 
-[https://www.php.net/manual/fr/book.xml.php](https://www.php.net/manual/fr/book.xml.php)
-
-### 🏷️ **Extensions XML pour PHP**
-
-[https://www.php.net/manual/fr/xml.installation.php](https://www.php.net/manual/fr/xml.installation.php)
+[Analyseur syntaxique XML](https://www.php.net/manual/fr/book.xml.php)
 
 ___
 
@@ -154,5 +151,3 @@ ___
 👨🏻‍💻 Manipulation
 
 Sauvegarder un fichier XML avant de l'avoir affiché. Son contenu correspond au résultat de lecture d'une entity.
-
-___

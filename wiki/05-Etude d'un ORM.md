@@ -223,5 +223,3 @@ ___
 👨🏻‍💻 Manipulation
 
 Utiliser l'entity manager et les repositories pour performer les actions sur la base de données
-
-___
