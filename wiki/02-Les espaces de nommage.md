@@ -95,5 +95,3 @@ ___
 👨🏻‍💻 Manipulation
 
 Utiliser un fichier d'autoload
-
-___

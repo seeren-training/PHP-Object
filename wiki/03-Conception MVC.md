@@ -108,5 +108,3 @@ ___
 👨🏻‍💻 Manipulation
 
 Associer une url à une action afin de construire le controller et d'invoquer son action en rapport avec la route qui correspond à la requête de l'utilisateur, prévoir les 404 et exceptions non attrapées pour afficher une page d'erreur interne.
-
-___
