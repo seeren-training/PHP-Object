@@ -16,7 +16,7 @@ Le `Data Source Name` en argument un doit posséder au moins **le type de drive 
 
 ```php
 $dbh = new PDO(
-    "mysql:host=localhost;dbname=media_bank;charset=UTF8",
+    "mysql:host=localhost;dbname=formation_php;charset=UTF8",
     "root",
     "", [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
@@ -49,18 +49,18 @@ $sth->execute();
 
 ### 🏷️ **Lecture**
 
-* Lire une ligne:
+* Lire une ligne
 
 ```php
 $raw = $sth->fetch();
 ```
-* Lire plusieurs lignes:
+* Lire plusieurs lignes
 
 ```php
 $raws = $sth->fetchAll();
 ```
 
-* Personnaliser le mode de lecture:
+* Personnaliser le mode de lecture
 
 ```php
 $sth->setFetchMode(PDO::FETCH::ASSOC);
@@ -70,19 +70,19 @@ $sth->setFetchMode(PDO::FETCH::ASSOC);
 
 Dans le cas de plusieurs exécution, il est important de pouvoir annuler l'une d'entre elle si une erreur apparait. **La transaction permet de valider ou d'annuler un ensemble exécutions** contenue dans un bloc.
 
-* Open a transaction:
+* Ouvrir une transaction
 
 ```php
 $dbh->beginTransaction();
 ```
 
-* Cancel executions and close:
+* Annuler les executions et fermer la transation
 
 ```php
 $dbh->rollBack();
 ```
 
-* Valid executions and close:
+* Valider les executions et fermer la transation:
 
 ```php
 $dbh->commit();
@@ -98,13 +98,13 @@ ___
 
 ## 📑 Limites de PDO
 
-PDO par ne procède pas à un mapping objet lors d'une lecture de tables en relation et les résultats ne reflètent pas nos agrégations. Le SQL à écrire et à maintenir représente une tache fastidieuse et le nombre d'instance en vie de PDO ne possède pas de gestionnaire.
+PDO par défaut ne procède pas à un mapping objet lors d'une lecture de tables en relation et les résultats ne reflètent pas nos agrégations. Le SQL à écrire et à maintenir représente une tache fastidieuse et le nombre d'instance en vie de PDO ne possède pas de gestionnaire.
 
 ### 🏷️ **[Staticité](https://www.php.net/manual/fr/language.oop5.static.php)**
 
 La staticité peut aider à limiter le nombre d'instance en vie de PDO.
 
-* Déclaration:
+* Déclaration
 
 ```php
 class Student
@@ -118,7 +118,7 @@ class Student
 }
 ```
 
-* Utilisation:
+* Utilisation
 
 ```php
 Student:: sayHello();
@@ -128,7 +128,7 @@ ___
 
 👨🏻‍💻 Manipulation
 
-Créer un [Singleton](https://fr.wikipedia.org/wiki/Singleton) pour stocker l'unique instance en vie de PDO.
+Créer un `Singleton` pour stocker l'unique instance en vie de PDO.
 
 ___
 
