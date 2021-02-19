@@ -1,4 +1,4 @@
-# PHP Objet
+# PHP Objet - Les classes et PHP
 
 ## Durée
 
